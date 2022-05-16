@@ -17,7 +17,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::get()->toJson(JSON_PRETTY_PRINT);
+        //$users = User::get()->toJson(JSON_PRETTY_PRINT);
+        $users = User::get();
+        //echo View('email.email', ['user' => $users[0]]); exit;
         return response($users, 200);
     }
 
