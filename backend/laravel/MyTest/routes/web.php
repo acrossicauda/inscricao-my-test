@@ -25,6 +25,6 @@ Route::get('/users', function () {
 Route::get('usuario', 'App\Http\Controllers\UserController@index')->name('user.index');
 Route::get('login', 'App\Http\Controllers\UserController@login')->name('user.login');
 Route::get('usuario/{id}', 'App\Http\Controllers\UserController@show')->name('user.show');
-Route::post('usuario', 'App\Http\Controllers\UserController@create')->name('user.create');
+Route::post('usuario', 'App\Http\Controllers\UserController@create')->name('user.create')->middleware("cors");
 Route::put('usuario/{id}', 'App\Http\Controllers\UserController@update')->name('user.update');
 Route::delete('usuario/{id}','App\Http\Controllers\UserController@delete')->name('user.delete');
